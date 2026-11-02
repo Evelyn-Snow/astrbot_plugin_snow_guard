@@ -1,0 +1,10 @@
+name: astrbot_plugin_snow_guard
+display_name: Bot 安全守卫
+desc: 出网白名单与注入防护：拦截内网/回环/云元数据/可疑短链，外部内容统一标记为不可信数据
+help: 无需指令；她访问白名单外链接会被拦下并如实告诉你，外部内容不会当成指令执行
+version: v0.1.1
+repo: https://github.com/Evelyn-Snow/astrbot_plugin_snow_guard
+author: Evelyn-Snow
+support_platforms:
+  - aiocqhttp
+  - webchat

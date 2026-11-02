@@ -1,0 +1,40 @@
+{
+  "enabled": {
+    "description": "启用安全守卫",
+    "type": "bool",
+    "default": true
+  },
+  "allow_hosts": {
+    "description": "允许访问的域名白名单",
+    "type": "text",
+    "default": "bilibili.com\nb23.tv\nhdslb.com\nbilivideo.com\ngutenberg.org\ngutendex.com\narxiv.org\ndeepseek.com\nbigmodel.cn\ngithub.com\nwikipedia.org\nzhihu.com\ndouban.com\nbing.com",
+    "hint": "每行一个；匹配自身与所有子域（bilibili.com 也允许 api.bilibili.com）。不在名单里的链接一律拦截并告知用户"
+  },
+  "allow_dns_private": {
+    "description": "允许域名解析到内网地址",
+    "type": "bool",
+    "default": false,
+    "hint": "关闭时，白名单域名若解析到 127.0.0.1/10.x/192.168.x 等内网地址也会被拦截（防 DNS rebinding）"
+  },
+  "max_redirects": {
+    "description": "短链最多跟随跳数",
+    "type": "int",
+    "default": 5
+  },
+  "audit_enabled": {
+    "description": "记录访问审计日志",
+    "type": "bool",
+    "default": true
+  },
+  "audit_keep_days": {
+    "description": "审计日志保留天数",
+    "type": "int",
+    "default": 30
+  },
+  "strict_tools": {
+    "description": "严格模式：白名单外一律拒绝",
+    "type": "bool",
+    "default": true,
+    "hint": "关闭后只拦截内网/回环/云元数据等危险地址，其余公网地址放行（仍记审计）"
+  }
+}
